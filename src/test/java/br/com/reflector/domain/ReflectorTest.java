@@ -12,11 +12,6 @@ import br.com.six2six.fixturefactory.Fixture;
 import br.com.six2six.fixturefactory.Rule;
 
 public class ReflectorTest {
-
-	private User getUser() {
-		return new User(1, "Geovanny Ribeiro", Arrays.asList(10000, 11000,
-				12000));
-	}
 	
 	@Before
 	public void setUp(){
