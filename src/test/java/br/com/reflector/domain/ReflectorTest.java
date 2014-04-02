@@ -5,6 +5,7 @@ import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.hamcrest.Matchers.*;
 import java.util.Arrays;
 import java.util.List;
+import org.apache.commons.lang.StringUtils;
 import org.junit.Before;
 import org.junit.Test;
 import br.com.reflector.exception.MissingPropertyException;
@@ -54,7 +55,7 @@ public class ReflectorTest {
 	public void shouldReturnEmptyStringWhenPropertyIsNull() {
 		User user = new User(2, null, Arrays.asList(10000, 11000, 12000));
 		assertThat(Reflector.reflectPrivatePropertyFrom(user, "name")
-				.toString(), equalTo(""));
+				.toString(), equalTo(StringUtils.EMPTY));
 
 	}
 

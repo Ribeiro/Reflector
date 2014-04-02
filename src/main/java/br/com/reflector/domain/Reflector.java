@@ -1,7 +1,10 @@
 package br.com.reflector.domain;
 
 import java.lang.reflect.Field;
+
+import org.apache.commons.lang.StringUtils;
 import org.springframework.util.ReflectionUtils;
+
 import br.com.reflector.exception.MissingPropertyException;
 
 public final class Reflector {
@@ -12,7 +15,7 @@ public final class Reflector {
 		Field privatePropertyField = retrieveFieldFrom(object, property);
 		ReflectionUtils.makeAccessible(privatePropertyField);
 		Object result = ReflectionUtils.getField(privatePropertyField, object);
-		return result == null ? "" : result;
+		return result == null ? StringUtils.EMPTY : result;
 	}
 	
 	private static Field retrieveFieldFrom(Object object, String property){
